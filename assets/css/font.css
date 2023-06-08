@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Eurostile-Extended-Black';
+  src: url('../../assets/fonts/eurostile-extended-black/EurostileExtended-Black.eot');
+  src: url('../../assets/fonts/eurostile-extended-black/EurostileExtended-Black.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/fonts/eurostile-extended-black/EurostileExtended-Black.woff2') format('woff2'),
+      url('../../assets/fonts/eurostile-extended-black/EurostileExtended-Black.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eurostile-Extended-Regular';
+  src: url('../../assets/fonts/eurostile-extended-regular/EurostileExtended-Roman.eot');
+  src: url('../../assets/fonts/eurostile-extended-regular/EurostileExtended-Roman.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/fonts/eurostile-extended-regular/EurostileExtended-Roman.woff2') format('woff2'),
+      url('../../assets/fonts/eurostile-extended-regular/EurostileExtended-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eurostile-Regular';
+  src: url('../../assets/fonts/eurostile-normal/EurostileRegular.eot');
+  src: url('../../assets/fonts/eurostile-normal/EurostileRegular.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/fonts/eurostile-normal/EurostileRegular.woff2') format('woff2'),
+      url('../../assets/fonts/eurostile-normal/EurostileRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../../assets/fonts/opensans-regular/OpenSans-Regular.eot');
+  src: url('../../assets/fonts/opensans-regular/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/fonts/opensans-regular/OpenSans-Regular.woff2') format('woff2'),
+      url('../../assets/fonts/opensans-regular/OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald-Heavy';
+  src: url('../../assets/fonts/oswald-heavy/Oswald-Heavy.woff2') format('woff2'),
+      url('../../assets/fonts/oswald-heavy/Oswald-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../../assets/fonts/oswald-light/Oswald-Light.woff2') format('woff2'),
+      url('../../assets/fonts/oswald-light/Oswald-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+

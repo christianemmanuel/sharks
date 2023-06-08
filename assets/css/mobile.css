@@ -1,0 +1,239 @@
+@media (max-width: 576px) {
+  h2 {
+    font-size: 2.625rem; } }
+
+@media (max-width: 576px) {
+  h4 {
+    font-size: 1.25rem; } }
+
+@media (max-width: 768px) {
+  .slick-slide {
+    padding: 0 10px; }
+    .slick-slide .events-card-hide {
+      opacity: 1;
+      visibility: visible; }
+      .slick-slide .events-card-hide .event-title {
+        opacity: 1; } }
+
+@media (max-width: 576px) {
+  .events-slider-details {
+    background-color: red; }
+    .events-slider-details .events-card-hide .event-title {
+      padding: 0 .75rem; }
+      .events-slider-details .events-card-hide .event-title .event-desc {
+        padding-right: 0; }
+      .events-slider-details .events-card-hide .event-title .date {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(27, 27, 27, 0.7);
+        transform: scale(0.7); } }
+
+.active_menu header .toggle-mobile-menu::before, .active_menu header .toggle-mobile-menu::after {
+  width: 50%; }
+
+@media (max-width: 768px) {
+  header .toggle-mobile-menu {
+    display: block;
+    width: 32px;
+    height: 2.5px;
+    position: relative;
+    background-color: #ffffff;
+    margin-left: auto;
+    border-radius: 4px; }
+    header .toggle-mobile-menu::before, header .toggle-mobile-menu::after {
+      transition: all ease-in-out 180ms;
+      position: absolute;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      background-color: #ffffff; }
+    header .toggle-mobile-menu::before {
+      top: -9px; }
+    header .toggle-mobile-menu::after {
+      top: 9px;
+      right: 0; }
+  header .top-bar-wrap {
+    margin-top: 20px; }
+    header .top-bar-wrap .container {
+      flex-direction: revert;
+      align-items: center;
+      position: relative; }
+  header .nav-logo {
+    margin-top: 0; }
+    header .nav-logo img {
+      max-width: 148px; }
+  header .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    width: calc(100% - 30px);
+    background-color: #eb6900;
+    z-index: 1;
+    padding: 0.5rem 0; }
+    header .nav-links ul {
+      margin-top: 0;
+      flex-direction: column;
+      text-align: left; }
+  header.hero-banner::before, header.hero-banner::after {
+    display: none; } }
+@media (max-width: 576px) {
+  header.hero-banner {
+    height: auto;
+    min-height: 480px !important; } }
+
+@media (max-width: 768px) {
+  .section-newsletter .newsletter-form-wrap {
+    padding: 1.75rem 0 2.4rem 0;
+    margin: auto;
+    text-align: center; }
+  .section-newsletter .social-media-icon ul {
+    justify-content: center; }
+  .section-newsletter .newsletter-img {
+    display: none; } }
+@media (max-width: 576px) {
+  .section-newsletter .newsletter-form-wrap {
+    width: 100%; }
+    .section-newsletter .newsletter-form-wrap .newsletter-details {
+      width: 100%; }
+    .section-newsletter .newsletter-form-wrap .form-group {
+      margin-left: auto;
+      margin-right: auto; } }
+
+@media (max-width: 992px) {
+  .hide-mobile {
+    display: none; }
+
+  .video-page-container {
+    flex-direction: column;
+    margin-bottom: 4rem;
+    gap: 40px; }
+    .video-page-container .aside-video-details {
+      max-width: 100%;
+      display: flex;
+      gap: 18px; }
+      .video-page-container .aside-video-details .game-schedule-details, .video-page-container .aside-video-details .ads-aside {
+        flex: 1;
+        margin-top: 0; }
+
+  .previous-matches-list.previous-matches-tiles {
+    gap: 17px; } }
+@media (max-width: 768px) {
+  .wrap-login h2 {
+    font-size: 26px; }
+
+  .video-playing-wrapper h3 {
+    font-size: 18px; }
+
+  .db-sidebar {
+    transition: all ease-in-out 180ms;
+    left: -250px; }
+    .db-sidebar::after {
+      opacity: 0.3; }
+
+  .active-aside .db-sidebar {
+    left: 0; }
+  .active-aside .toggle-aside {
+    transition-delay: 180ms;
+    opacity: 1;
+    visibility: visible; }
+  .active-aside .open-aside::after {
+    opacity: 1;
+    visibility: visible; }
+
+  .main-content {
+    padding-left: 0;
+    padding-top: 105px; }
+
+  .arenas-livestream-list .livestream-item {
+    max-width: max-content;
+    padding: 0 8px; }
+  .arenas-livestream-list .livestream-thumbnail {
+    height: 220px; }
+
+  .previous-matches-list .previous-match-item {
+    max-width: max-content;
+    padding: 0 8px; }
+
+  .db-slider .slick-list {
+    padding: 0 7% 0 0 !important; }
+
+  .db-top-menu {
+    padding-left: 1.2rem;
+    border-bottom: 1px solid #545458; }
+
+  .btn-login a {
+    height: 38px;
+    font-size: 14px;
+    padding: 0 10px 0 15px; }
+    .btn-login a .icon.icon-user {
+      width: 22px;
+      height: 22px;
+      background-size: 22px; }
+
+  .toggle-aside {
+    opacity: 0;
+    visibility: hidden; }
+
+  .open-aside {
+    display: block; } }
+@media (max-width: 576px) {
+  .video-page-container .aside-video-details {
+    flex-direction: column; }
+
+  .video-page-container {
+    padding: 0 15px; }
+
+  .previous-matches-list.previous-matches-tiles {
+    grid-template-columns: repeat(2, 1fr); }
+
+  .card-details {
+    flex-direction: column;
+    align-items: start; }
+    .card-details .views {
+      justify-content: left; }
+
+  .card-details .right-desc {
+    text-align: left;
+    margin-top: .75rem; }
+
+  footer {
+    padding: 1.5rem 0; }
+
+  .db-slider .slick-dots {
+    margin-top: 20px; }
+
+  .video-playing-description ul {
+    flex-direction: column; }
+    .video-playing-description ul li {
+      padding-right: 0;
+      margin-right: 0;
+      padding-left: 15px;
+      line-height: 1.35em; }
+      .video-playing-description ul li::after {
+        top: 8px;
+        left: 0;
+        right: auto; }
+      .video-playing-description ul li:last-child::after {
+        display: block; } }
+@media (max-width: 768px) {
+  header .countdown-event ul li div {
+    font-size: 2.375rem; } }
+@media (max-width: 576px) {
+  header .countdown-event ul li div {
+    font-size: 1.8rem; }
+    header .countdown-event ul li div::after {
+      right: -5px; } }
+
+@media (max-width: 992px) {
+  .section-upcoming-events {
+    padding: 3.563rem 0; } }
+
+@media (max-width: 576px) {
+  footer .partners-logo {
+    flex-direction: column;
+    gap: 10px 0; } }
+
+/*# sourceMappingURL=mobile.css.map */
