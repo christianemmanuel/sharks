@@ -16,15 +16,30 @@
 
 				<div class="video-playing-detail mt-1">
 					<h3 class="uppercase"><?php the_title(); ?></h3>
+					<div class="livestream-like">
+						<?php the_content(); ?>
+						<div class="toggle-share-social-media">
+							<i class="icon icon-share"></i>
+							<span>Share</span>
+						</div>
+					</div>
 				</div>
 
 				<div class="video-playing-description uppercase">
 					<p><?php the_sub_field('players_list'); ?></p>
 					<ul>
-						<li><?php the_sub_field('day'); ?></li>
-						<li><?php the_sub_field('pool_game'); ?></li>
-						<li><?php the_sub_field('race_to'); ?></li>
-						<li><?php the_sub_field('date'); ?></li>
+						<?php if (get_sub_field('day')) : ?>
+							<li><?php the_sub_field('day'); ?></li>
+						<?php endif; ?>
+						<?php if (get_sub_field('pool_game')) : ?>
+							<li><?php the_sub_field('pool_game'); ?></li>
+						<?php endif; ?>
+						<?php if (get_sub_field('race_to')) : ?>
+							<li><?php the_sub_field('race_to'); ?></li>
+						<?php endif; ?>
+						<?php if (get_sub_field('date')) : ?>
+							<li><?php the_sub_field('date'); ?></li>
+						<?php endif; ?>
 					</ul>
 					<p>
 						<?php if( get_field('choose_arena') == 'tiger') : ?> 
@@ -42,7 +57,7 @@
 			</div>
 
 			<section class="previous-matches-wrap">
-				<h4>PREVIOUS MATCHES</h4>
+				<h4 class="heading-with-cta"><span>PREVIOUS MATCHES</h4>
 
 				<div class="previous-matches-list previous-matches-tiles">
 
@@ -154,5 +169,10 @@
 <?php get_footer();?>
 
 <?php else : ?>
-	<?php wp_redirect('/login');  ?>
+	<?php 
+		ob_clean();
+		$url = get_home_url() . '/login';
+		wp_redirect($url);
+		exit(); 
+	?>
 <?php endif; ?>

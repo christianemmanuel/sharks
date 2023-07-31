@@ -188,10 +188,15 @@ function load_stylesheets() {
 	wp_register_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', array(), 1, 'all');
   wp_enqueue_style('reset');
 
-	wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), 1, 'all');
+	if (is_front_page()) {
+		wp_register_style( 'lightbox2css', get_template_directory_uri() . '/assets/lightbox2/css/lightbox.css', array(), 1, 'all');
+  	wp_enqueue_style('lightbox2css');
+  }
+
+	wp_register_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), 1.4, 'all');
   wp_enqueue_style('main');
 
-	wp_register_style( 'mobile', get_template_directory_uri() . '/assets/css/mobile.css', array(), 1, 'all');
+	wp_register_style( 'mobile', get_template_directory_uri() . '/assets/css/mobile.css', array(), 1.3, 'all');
   wp_enqueue_style('mobile');
 
 	wp_register_style( 'font', get_template_directory_uri() . '/assets/css/font.css', array(), 1, 'all');
@@ -211,8 +216,16 @@ function load_scripts() {
   wp_register_script('slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), 1, 1, 1);
   wp_enqueue_script('slick');
 
-  wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), 1, 1, 1);
+  wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), 3, 3, 3);
   wp_enqueue_script('scripts');
+  
+  if (is_front_page()) {
+		wp_register_script('sharksdata', get_template_directory_uri() . '/assets/js/sharksdata.js', array(), 1, 1, 1);
+		wp_enqueue_script('sharksdata');
+
+		wp_register_script('lightbox2', get_template_directory_uri() . '/assets/lightbox2/js/lightbox.js', array(), 1, 1, 1);
+		wp_enqueue_script('lightbox2');
+  }
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
@@ -321,10 +334,12 @@ function red_registration_fields($reg_form_role) {	?>
 	<form id="red_registration_form" action="" method="POST">
 		
 		<div class="section-signin-wrap">
-			<a href="<?php echo home_url(); ?>" class="nav-logo">
-				<img src="<?= get_template_directory_uri().'/assets/logo.svg' ?>" alt="Sharsk logo">
+		    
+	    	<a href="<?php echo home_url(); ?>" class="nav-logo">
+			  <img src="<?= get_template_directory_uri() .'/assets/logo.svg' ?>" alt="Sharsk logo">
 			</a>
 
+		
 			<div class="wrap-login">
 				<h2 class="mb-1">SIGNUP</h2>
 
@@ -461,7 +476,7 @@ if ($fullScreen == 1) echo '<style> </style>';	?>
 
 <div class="section-signin-wrap">
 	<a href="<?php echo home_url(); ?>" class="nav-logo">
-		<img src="<?= get_template_directory_uri() . './assets/logo.svg' ?>" alt="Sharsk logo">
+	  <img src="<?= get_template_directory_uri() .'/assets/logo.svg' ?>" alt="Sharsk logo">
 	</a>
 
 	<div class="wrap-login">
@@ -615,9 +630,11 @@ function custom_login_form_to_login_page( $content )
 add_action('admin_init', 'disable_dashboard');
 
 function disable_dashboard() {
-    if (current_user_can('subscriber') && is_admin()) {
+    if (current_user_can('contributor') && is_admin()) {
 			wp_redirect(home_url()); exit;
     }
 }
 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 

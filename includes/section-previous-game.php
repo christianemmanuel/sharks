@@ -13,17 +13,17 @@
   
     <?php if( have_rows('previous_match_details') ): ?>
       <?php while( have_rows('previous_match_details') ): the_row(); ?>
-        
-        <a href="<?php the_permalink(); ?>" class="previous-match-item">
-          <div class="previous-match-card">
-            <div class="previous-match-thumbnail">
-              <?php if (get_the_post_thumbnail_url()) : ?>
-                <img src="<?php the_post_thumbnail_url('arena_thumbnail'); ?>" alt="<?php the_title(); ?>">
+
+        <a href="<?php the_permalink(); ?>" class="slider-global-item">
+          <div class="slider-card">
+            <div class="preview-container">
+              <?php if (get_field('thumbnail')) : ?>
+                <img src="<?php the_field('thumbnail'); ?>" alt="image" alt="<?php the_title(); ?>">
               <?php else : ?>
-                <img src="<?php bloginfo('template_directory'); ?>/assets/db-assets/placeholder.jpg" alt="Previous match thumbnail">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/db-assets/placeholder-logo.jpg" alt="Thumbnail">
               <?php endif;  ?>
             </div>
-            <div class="previous-match-details card-details flex-col align-start">
+            <div class="bg-transparent card-details">
               <div class="left-desc">
                 <p class="card-title"><?php the_title(); ?></p>
                 <span class="small">
@@ -47,13 +47,14 @@
           </div>
         </a>
 
+
       <?php endwhile; ?>
     <?php endif; ?>
 
   <!-- end of loop -->
   <?php endwhile; ?>
   <?php else : ?>
-	  <p>There has been no previous game at this time.</p>
+	  <p>No previous matches uploaded yet.</p>
   <?php endif; ?>
 
   <?php wp_reset_postdata(); ?>

@@ -17,27 +17,17 @@
 
 </div> <!-- main-content -->
 
+<?php wp_footer(); ?>
 <?php if(is_front_page()) : ?>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const date = new Date();
-			const current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-			
-			fetch(`https://billiards.luckytaya.com/api/event/info/${current_date}`)
-				.then(response => response.json())
-				.then(data => {
-					
-
-					
-				})
-				.catch(error => {
-					console.error(error);
-				});
-		})
+	<script type='text/javascript'>
+		$('document').ready(function () {
+			lightbox.option({
+				'resizeDuration': 200,
+				'wrapAround': true
+			})
+		});	
 	</script>
 <?php endif; ?>
-
-<?php wp_footer(); ?>
 
 </body>
 </html>

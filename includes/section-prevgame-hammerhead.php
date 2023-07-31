@@ -26,7 +26,7 @@
               <?php if (get_the_post_thumbnail_url()) : ?>
                 <img src="<?php the_post_thumbnail_url('arena_thumbnail'); ?>" alt="<?php the_title(); ?>">
               <?php else : ?>
-                <img src="<?php bloginfo('template_directory'); ?>/assets/db-assets/placeholder.jpg" alt="Previous match thumbnail">
+                <img src="<?php bloginfo('template_directory'); ?>/assets/db-assets/placeholder-logo.jpg" alt="Previous match thumbnail">
               <?php endif;  ?>
             </div>
             <div class="previous-match-details card-details flex-col align-start">
@@ -47,7 +47,7 @@
   <!-- end of loop -->
   <?php endwhile; ?>
   <?php else : ?>
-	  <p>There has been no previous game at this time.</p>
+	  <p>No previous matches uploaded yet.</p>
   <?php endif; ?>
 
   <?php wp_reset_postdata(); ?>

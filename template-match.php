@@ -19,7 +19,10 @@
   <?php get_footer(); ?>
 
 <?php else : ?>
-
-	<?php wp_redirect('/login');  ?>
-  
+	<?php 
+		ob_clean();
+		$url = get_home_url() . '/login';
+		wp_redirect($url);
+		exit(); 
+	?>
 <?php endif; ?>

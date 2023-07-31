@@ -17,7 +17,7 @@
 
         <?php if ( get_sub_field('ads_image' ) ): ?>
 
-          <a href="<?php the_sub_field('ads_url'); ?>" class="ads-aside" target="_blank">
+          <a href="<?php the_sub_field('ads_url'); ?>" class="ads-aside-link" target="_blank">
             <img src="<?php the_sub_field('ads_image'); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>">
           </a>
 

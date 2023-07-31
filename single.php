@@ -20,14 +20,29 @@
 					<?php if(in_category('great-white-arena')): ?> 
 						<div class="video-playing-detail mt-1">
 							<h3 class="uppercase" id="game-title"></h3>
+							<div class="livestream-like">
+								<?php the_content(); ?>
+								<div class="toggle-share-social-media">
+									<i class="icon icon-share"></i>
+									<span>Share</span>
+								</div>
+							</div>
 						</div>
 
 						<div class="video-playing-description uppercase">
 							<div id="game-players"></div>
 							<ul>
-								<li id="game-date"></li>
+								<li id="game-raceto"></li>
+								<li><?php echo date('F j, Y'); ?></li>
 							</ul>
 						</div>
+
+						<?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+						?>
 					<?php elseif(in_category('bull-shark-arena')): ?>
 						
 					<?php elseif(in_category('hammerhead-arena')): ?>
@@ -35,14 +50,29 @@
 					<?php elseif(in_category('tiger-arena')): ?>
 						<div class="video-playing-detail mt-1">
 							<h3 class="uppercase" id="game-title"></h3>
+							<div class="livestream-like">
+								<?php the_content(); ?>
+								<div class="toggle-share-social-media">
+									<i class="icon icon-share"></i>
+									<span>Share</span>
+								</div>
+							</div>
 						</div>
 
 						<div class="video-playing-description uppercase">
 							<div id="game-players"></div>
 							<ul>
-								<li id="game-date"></li>
+								<li id="game-raceto"></li>
+								<li><?php echo date('F j, Y'); ?></li>
 							</ul>
 						</div>
+
+						<?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+						?>
 					<?php else : ?>
 						
 					<?php endif; ?>
@@ -56,11 +86,8 @@
 			<?php endif; // end of if livestream_url logic ?>
 
 			<section class="previous-matches-wrap">
-				
-				<h4>PREVIOUS MATCHES</h4>
-
+				<h4 class="heading-with-cta"><span>PREVIOUS MATCHES</span></h4>
 				<div class="previous-matches-list previous-matches-tiles">
-
 					<?php if(in_category('great-white-arena')): ?> 
 						<!-- GREAT WHITE ARENA PREVIOUS GAME -->
 						<?php get_template_part('includes/section', 'prevgame-greatwhite'); ?>
@@ -76,11 +103,10 @@
 					<?php elseif(in_category('tiger-arena')): ?>
 						<!-- TIGER ARENA PREVIOUS GAME -->
 						<?php get_template_part('includes/section', 'prevgame-tiger'); ?>
-					
-					<?php else : ?>
-						<p>There has been no previous game at this time.</p>
 					<?php endif; ?>
-					
+				</div>
+				<div class="view-all-prevgame-container">
+					<a href="/previous-games/"><i class="icon icon-plusicon"></i> View More</a>
 				</div>
 			</section>
 
@@ -135,5 +161,10 @@
 	<?php get_footer();?>
 
 <?php else : ?>
-	<?php wp_redirect('/login');  ?>
+	<?php 
+		ob_clean();
+		$url = get_home_url() . '/login';
+		wp_redirect($url);
+		exit(); 
+	?>
 <?php endif; ?>

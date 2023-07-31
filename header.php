@@ -28,6 +28,7 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<?php wp_head(); ?>
+	<title>Sharks - The Mecca Of Pool</title>
 </head>
 
 <body <?php body_class(); ?>>
@@ -39,6 +40,7 @@
 		</a>
 		
 		<div class="menu-list">
+
 			<ul>
 				<li><a href="/"><i class="icon icon-home"></i> Home</a></li>
 				<li class="dropdown">
@@ -46,10 +48,9 @@
 					<ul class="submenu">
 						<li><a href="/arena/greate-white-arena/">Great White Arena</a></li>
 						<li><a href="/arena/tiger-arena/">Tiger Arena</a></li>
-						<li><a href="/arena/hammerhead-arena/">Hammerhead Arena</a></li>
-						<li><a href="/arena/bullshark-arena/">Bull Shark Arena</a></li>
 					</ul>
 				</li>
+				<li><a href="/contact"><i class="icon icon-call"></i> Contact</a></a></li>
 			</ul>
 		</div>
 	</aside>
@@ -62,16 +63,17 @@
       <div class="btn-login">
 				<?php global $current_user; wp_get_current_user(); ?>
 				<?php if ( is_user_logged_in() ) : ?>
-					<a class="btn-header" href="javascript:void(0);">Hi, <?php echo $current_user->display_name ?> <i class="icon icon-user"></i></a>
+					<a class="btn-header" href="javascript:void(0);">Hi, <?php echo $current_user->display_name ?> <i class="icon icon-user" style="border-radius: 50%; background-image: url(<?php echo get_avatar_url( get_current_user_id(), array( 'size' => 50 ) ); ?>);"></i></a>
 					<div class="user-dropdown">
 						<?php if(current_user_can('editor') || current_user_can('administrator')) { ?>
-							<a href="/admin-dashboard">Dashboard</a>
+							<a href="<?php echo get_home_url() . '/wp-admin' ?>">Dashboard</a>
 						<?php } ?>
 						<!-- <a href="/edit-profile">Edit Profile</a> -->
 						<a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
 					</div>
 				<?php else: ?>
-					<a class="btn-header" href="/login">Login / Signup <i class="icon icon-user"></i></a>
+					<a class="btn-header" href="<?php echo get_home_url() . '/login' ?>">Login / Signup 
+					<i class="icon icon-user"></i></a>
 				<?php endif; ?>
       </div>
     </header>

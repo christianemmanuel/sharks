@@ -51,7 +51,6 @@ h4 {
 
 .slick-slide {
   @include md {
-    padding: 0 10px;
     .events-card-hide {
       opacity: 1;
       visibility: visible;
@@ -64,7 +63,6 @@ h4 {
 
 .events-slider-details {
   @include sm {
-    background-color: red;
     .events-card-hide {
       .event-title {
         padding: 0 .75rem;
@@ -212,7 +210,7 @@ header {
       max-width: 100%;
       display: flex;
       gap: 18px;
-      .game-schedule-details, .ads-aside {
+      .game-schedule-details, .ads-aside-link {
         flex: 1;
         margin-top: 0;
       }
@@ -226,6 +224,18 @@ header {
 }
 
 @include md {
+  .sld-border-bottom {
+    padding-left: 22px;
+  }
+  .slick-slide {
+    padding: 0 7px;
+  }
+  .slick-list {
+    padding:0 5% 0 0;
+  }  
+  body {
+    background-attachment: inherit;
+  }
   .wrap-login h2 {
     font-size: 26px;
   }
@@ -261,21 +271,15 @@ header {
   }
   .arenas-livestream-list {
     .livestream-item {
-      max-width: max-content;
-      padding: 0 8px;
-    }
-    .livestream-thumbnail {
-      height: 220px;
+      max-width: none;
+      width: auto;
     }
   }
   .previous-matches-list { 
     .previous-match-item {
-      max-width: max-content;
-      padding: 0 8px;
+      max-width: none;
+      width: auto;
     }
-  }
-  .sharks-slider-wrap {
-    .slick-list{ padding: 0 7% 0 0 !important; }
   }
   .db-top-menu {
     padding-left: 1.2rem;
@@ -300,16 +304,42 @@ header {
   .open-aside {
     display: block;
   }
+  .previous-matches-page .previous-matches-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .previous-matches-page {
+    padding: 0 16px !important;
+  }
+  .sharks-slider-wrap .slick-dots {
+    margin-top: 18px;
+  }
+  .match-result-info {
+    h4 {
+      font-size: 21px;
+    }
+    h3 {
+      font-size: 26px;
+    }
+  }
+  .previous-matches-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .video-playing-detail {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
 }
 @include sm {
+  .previous-matches-page .previous-matches-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 15px;
+  }
   .video-page-container .aside-video-details {
     flex-direction: column;
   }
   .video-page-container {
     padding: 0 15px;
-  }
-  .previous-matches-list.previous-matches-tiles {
-    grid-template-columns: repeat(2, 1fr);
   }
   .card-details {
     flex-direction: column;
@@ -322,6 +352,13 @@ header {
     .right-desc {
       text-align: left;
       margin-top: .75rem;
+    }
+    &.livestream-details {
+      .right-desc {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
     }
   }
   footer {
@@ -351,6 +388,18 @@ header {
           }
         }
       }
+    }
+  }
+  .match-result-item {
+    padding: 0 7px;
+    max-width: none;
+  }
+  .match-results-list {
+    .slick-dots {display: none !important;}
+  }
+  .upcoming-matches-wrap {
+    h5 {
+      font-size: 1rem;
     }
   }
 }

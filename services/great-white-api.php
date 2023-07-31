@@ -14,8 +14,8 @@
         
         let ul = document.querySelector('#eventInfo ul');
         let gameTitle = document.getElementById('game-title');
-        let gameDate = document.getElementById('game-date');
         let gamePlayers = document.getElementById('game-players');
+        let gameRaceTo = document.getElementById('game-raceto');
 
         const grateWhiteDate = new Date(arenaInfo[0].eventTime.date).toLocaleDateString('en-US', {
           month: 'long',
@@ -33,17 +33,18 @@
           
           arenaInfo.forEach(schedules => {
             ul.innerHTML += `
-              <li class=${schedules.status === 1 ? "live-now" : ""}>
+              <li class="${schedules.status === 1 ? "live-now" : ""}">
                 <h4>${schedules.shortName}</h4>
-                ${schedules.status === 1 ? `<div class="live-badge">
-                  Live <i class="icon icon-circle"></i>
-                </div>` : ''}
+                ${schedules.status === 1 ? `
+                  <div class="live-badge">
+                    Live <i class="icon icon-circle"></i>
+                  </div>` : ''}
                 
                 <p>${schedules.arenaDescription}</p>
               </li>
             `
             gameTitle.innerHTML += `${schedules.status === 1 ? schedules.shortName : ''}`
-            gameDate.innerHTML += ` ${schedules.status === 1 ? grateWhiteDate : ''} `
+            gameRaceTo.innerHTML += `${schedules.status === 1 ? `Race to ${schedules.maxWins}` : ''}`
 
             if(schedules.status === 1) {
               schedules.sharks.map(function (e) {
